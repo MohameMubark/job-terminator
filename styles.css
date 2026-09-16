@@ -183,6 +183,9 @@ html[dir="rtl"] .steps li:hover{transform:translateX(-4px)}
 .license-card:hover .lc-code{border-color:rgba(52,211,153,.5)}
 .lc-wa{text-align:center;font-size:15px;color:var(--mut);margin-bottom:12px}
 .lc-wa bdi{color:var(--txt);font-weight:700}
+.wa-link{display:inline-flex;align-items:center;gap:7px;color:#fff!important;background:#1da851;font-weight:700;padding:5px 18px;border-radius:999px;font-size:14px;transition:background .15s,transform .15s var(--ease-spring)}
+.wa-link:hover{background:#22c55e;transform:translateY(-1px)}
+.wa-link::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.2)}
 .lc-key{background:rgba(255,255,255,.025);border:1px dashed #3a4354;color:var(--dim);text-align:center;border-radius:10px;padding:11px;font-size:13.5px;font-family:var(--mono);margin-bottom:16px}
 .lc-btn{background:var(--acc-deep);color:#fff;text-align:center;font-weight:700;border-radius:10px;padding:12px;box-shadow:0 6px 22px rgba(16,185,129,.25)}
 

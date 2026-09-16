@@ -241,4 +241,11 @@ function setTheme(th) {
   });
 })();
 
+/* ---------- WhatsApp: open international (Egypt +20) in new tab ---------- */
+function openWa(e, number) {
+  e.preventDefault();
+  window.open("https://wa.me/" + number, "_blank", "noopener");
+  return false;
+}
+
 initLang();
