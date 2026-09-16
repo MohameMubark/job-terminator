@@ -1,108 +1,127 @@
-# Job Terminator
+# 📥 Job Terminator — Automated Job Application Assistant
 
-مُساعد آلي للبحث عن الوظائف على ويندوز — يبحث بدلا منك في مواقع التوظيف وجروبات تيليجرام، يطابق فرص العمل مع بياناتك، يولّد سيرة ذاتية مخصصة لكل وظيفة، ويُرسل طلب التقديم من إيميلك الشخصي وواتساب.
+**English:** Automates your job-hunting: it searches job sites & Telegram groups
+**on your behalf**, matches openings with your profile, generates a tailored
+resume for each job, and sends the application from **your** Gmail.
 
-Automated job-search assistant for Windows. Scrapes job sites + Telegram, matches against your CV, generates a tailored ATS-friendly resume per job, and sends applications from your own Gmail and WhatsApp.
-
-- 🔍 Searches job sites (Wuzzuf, Bayt, LinkedIn, Naukrigulf, GulfTalent, ...) and your Telegram groups
-- 🎯 Scores every job against your CV
-- 📝 Generates a tailored AI resume per job (your own Gemini key)
-- ✉️ Sends applications from **your** Gmail; optional WhatsApp Web sending
-- 🔒 Config encrypted (AES-256) and bound to your PC + license
-- 🔑 RSA-signed offline license, machine-locked — the app does nothing before a valid key
-- 🌐 **دعم كامل للعربية** — واجهة عربية + OCR للنصوص العربية في صور تيليجرام
-
-## Quick start (users)
-
-1. Download `JobTerminatorSetup.exe` from **Releases**.
-2. Run it once, note your **Machine Code**, request a license key from the seller.
-3. Paste the key → fill your data once in Settings → run daily.
-   Full steps: see the **دليل المستخدم** below.
-
-## What's bundled in the installer
-
-Clients install one EXE — no Python, no libraries, no OCR needed:
-
-- Python 3.13 + PySide6, Selenium (+ selenium-manager), Pandas, reportlab, google client libs
-- **Tesseract OCR + English & Arabic traineddata** (for Telegram image OCR)
-- Base CV template, license system
+**العربية:** يؤتمت البحث عن الوظائف: **البحث بدلاً منك** في مواقع التوظيف وجروبات
+تيليجرام، يطابق الفرص مع بياناتك، يولّد سيرة ذاتية مخصصة لكل وظيفة، ويُرسل طلب
+التقديم من **إيميلك** الشخصي.
 
 ---
 
-## دليل المستخدم
+## 🌍 Choose your language / اختر لغتك
 
-برنامج أتمتة البحث عن وظائف: يبحث بدلا منك في مواقع التوظيف وجروبات تيليجرام، يطابق فرص العمل مع بياناتك، يولّد سيرة ذاتية مخصصة لكل وظيفة، ثم يرسل طلب التقديم من إيميلك الشخصي.
+- English 👉 continue reading below (English section)
+- العربية 👉 انتقل لقسم العربية أسفل هذا القسم
 
-### 1) متطلبات التشغيل (على جهاز العميل)
+---
 
-لا تحتاج تثبيت أي برنامج إضافي. ملف التثبيت يضمّ كل شيء تلقائيًا:
+## 🚀 English
 
-| المتطلب | هل يحتاج العميل تثبيته؟ |
+### What it does
+
+- 🔍 Searches job sites (Wuzzuf, Bayt, LinkedIn, Naukrigulf, GulfTalent, ...) and your **Telegram groups**
+- 🎯 Scores every job against your CV (configurable match threshold)
+- 📝 Generates a tailored ATS-friendly resume per job (your own Gemini key)
+- ✉️ Sends applications from **your** Gmail; optional WhatsApp Web sending
+- 🔒 Config encrypted (AES-256) and bound to your PC + license
+- 🔑 RSA-signed offline license, machine-locked — the app does nothing without a valid key
+- 🌐 Full Arabic support — Arabic UI + OCR for Arabic text in Telegram images
+
+### Quick start
+
+1. Download `JobTerminatorSetup.exe` from **Releases** below.
+2. Run it once, copy your **Machine Code**, and contact the seller for a license key.
+3. Paste the key → fill Settings once → run daily. (Full guide: Arabic section below.)
+
+### System requirements
+
+| Requirement | Does the client install it? |
 | --- | --- |
-| ويندوز 10/11 (64-bit) | نعم — نظام التشغيل نفسه |
-| اتصال إنترنت | نعم — للبحث والإرسال والتوليد |
-| متصفح Microsoft Edge أو Google Chrome | يُفضَّل — يُستخدم للبحث والواتساب ويب |
-| Python أو أي مكتبة (PySide6, Selenium...) | لا — مدمجة داخل البرنامج |
-| محرك OCR (Tesseract) عربي/إنجليزي | لا — مدمج داخل البرنامج |
-| رقم هاتف تيليجرام مع API_ID/API_HASH | حسب استخدامك لميزة تيليجرام فقط |
+| Windows 10 / 11 (64-bit) | Yes — the OS itself |
+| Internet connection | Yes — for search & sending |
+| Microsoft Edge or Google Chrome | Preferred — used for search & WhatsApp Web |
+| Python, PySide6, Selenium, ... | **No** — bundled in the installer |
+| Tesseract OCR (Arabic/English) | **No** — bundled in the installer |
+| Telegram phone + API_ID/API_HASH | Only if you use the Telegram feature |
 
-> كل المكتبات (Python, PySide6, Selenium, Pandas, Tesseract مع اللغة العربية والإنجليزية) مدمجة في ملف التثبيت. التثبيت للمستخدم الحالي فقط ولا يحتاج صلاحيات مدير النظام.
+### What's bundled in the installer
 
-### 2) التثبيت
+One EXE — no Python, no libraries, no OCR installs:
 
-1. حمّل `JobTerminatorSetup.exe` وافتحه.
-2. اضغط **Install** وانتظر حتى يكتمل.
-3. سيظهر اختصار **Job Terminator** على سطح المكتب وفي قائمة Start.
+- Python 3.13 + PySide6, Selenium, Pandas, reportlab, Google client libs
+- Tesseract OCR + English & Arabic traineddata
+- Base CV template & license system
 
-### 3) التفعيل (أول مرة)
+### License / ownership
 
-1. افتح البرنامج — سيظهر **كود الآلة (Machine Code)** مثل `504B47E706ADF8CE`.
-2. انسخ الكود وارسله إلى البائع عبر واتساب للحصول على **مفتاح الترخيص**.
-3. الصق مفتاح الترخيص في البرنامج واضغط Enter.
-4. البرنامج لا يعمل إطلاقًا قبل إدخال ترخيص صالح — وهذا مقصود لحماية المبيعات.
+**Job Terminator** is proprietary software owned by Job Terminator. It is
+distributed under a machine-locked offline license — see the **[LICENSE](LICENSE)**
+file. Redistribution, resale, decompiling, or bypassing the license protection is
+prohibited.
 
-### 4) الإعدادات (مرة واحدة)
+---
 
-من شاشة **الإعدادات** داخل البرنامج أدخل:
+## 🌍 العربية
 
-- بريدك الإلكتروني (يُسجَّل مرة واحدة).
-- مفتاح Gemini الخاص بك (من Google AI Studio) لتوليد السيرة الذاتية.
-- بيانات إيميل الإرسال: **كلمة مرور التطبيق** من إعدادات جوجل (يُفضَّل)، أو **Google OAuth** بأن تستورد ملف `credentials.json` الخاص بك.
-- بيانات تيليجرام (API_ID / API_HASH / الهاتف) ومجموعات الوظائف.
-- الكلمات المفتاحية والمواقع (مثال: `planning engineer` — مصر).
+### ماذا يفعل البرنامج
 
-> **طريقة احترافية للتسجيل بجوجل:** بجانب "تسجيل الدخول بجوجل" أزرار زرقاء:
-> **"How to get Google credentials"** يفتح الخطوات + لوحة Google Cloud في متصفحك، ثم اختر **Import credentials.json** واستورد ملفك. وبجانب تيليجرام زر **"How to get Telegram API credentials"** يفتح `my.telegram.org` مباشرة.
+- 🔍 يبحث **بدلاً منك** في مواقع التوظيف وجروبات تيليجرام الخاصة بك
+- 🎯 يقيّم كل وظيفة على حدة نسبةً لسيرتك الذاتية (مع عتبة مطابقة قابلة للضبط)
+- 📝 يولّد سيرة ذاتية مخصصة لكل وظيفة (بمفتاح Gemini الخاص بك)
+- ✉️ يُرسل طلبات التقديم من **إيميلك** Gmail؛ مع خاصية إرسال اختيارية عبر واتساب ويب
+- 🔒 ملف الإعدادات مشفّر (AES-256) ومرتبط بجهازك وترخيصك
+- 🔑 ترخيص أوفلاين موقّع رقمياً ومرتبط بجهاز واحد — لا يعمل البرنامج قبل مفتاح صالح
+- 🌐 دعم كامل للعربية — واجهة عربية + OCR للعربية في الصور داخل تيليجرام
 
-اضغط **حفظ** — تُخزَّن كل البيانات **مشفّرة AES-256** ومرتبطة بجهازك وترخيصك فقط.
+### التثبيت
 
-### 5) الاستخدام اليومي
+1. حمّل `JobTerminatorSetup.exe` من **Releases** بالأسفل.
+2. افتحه واضغط **Install** — سيظهر اختصار **Job Terminator** على سطح المكتب.
 
-1. افتح البرنامج (الترخيص يُتحقق تلقائيًا — لا إدخال يومي).
-2. شغّل **البحث** — يجمع الوظائف في قاعدة البيانات المحلية.
-3. راجع النتائج، ثم شغّل **المطابقة + التوليد + الإرسال**.
-4. يُرسل التقديم من إيميلك، وعبر واتساب ويب إن رغبت (يُمسح QR مرة واحدة).
+### التفعيل (أول مرة)
 
-### 6) ملاحظات وحدود مقصودة
+1. افتح البرنامج — سيظهر **كود الآلة (Machine Code)**.
+2. أرسل الكود للبائع عبر واتساب لتحصل على **مفتاح الترخيص**.
+3. الصق المفتاح واضغط Enter — البرنامج لا يعمل قبل ترخيص صالح (مقصود لحماية المبيعات).
 
-- المفتاح يعمل على **جهازك فقط**. النقل لجهاز آخر يحتاج مفتاحًا جديدًا من البائع.
-- الإرسال محدود لكل تشغيل وبفواصل زمنية طويلة — لحماية حسابك من الحظر.
-- تغيير البريد المسجَّل بعد أول تسجيل مرفوض — تواصل مع البائع لإعادة الضبط.
-- أغلق البرنامج دائمًا من زر الإغلاق العادي — عند الإغلاق الطبيعي تُعاد حماية الإعدادات تلقائيًا.
+### الإعدادات (مرة واحدة)
 
-### 7) حل المشكلات السريعة
+من شاشة **الإعدادات**: البريد الإلكتروني، مفتاح Gemini، بيانات إيميل الإرسال
+**(كلمة مرور التطبيق يُفضَّل — أو Google OAuth بملف credentials.json الخاص بك)**،
+بيانات تيليجرام ومجموعات الوظائف، والكلمات المفتاحية والمواقع. اضغط **حفظ** —
+تُخزَّن مشفّرة ومرتبطة بجهازك بترخيصك فقط.
+
+> بجانب زر "تسجيل الدخول بجوجل" اوجد زر **"How to get Google credentials"** الذي
+> يفتح لك الخطوات كاملة، وكذلك زر **"How to get Telegram API credentials"** بجانب
+> تيليجرام يفتح my.telegram.org مباشرة.
+
+### الاستخدام اليومي
+
+افتح البرنامج (ترخيصك يُتأكد تلقائياً) ← شغّل **البحث** ← راجع النتائج ← شغّل
+**المطابقة + التوليد + الإرسال**.
+
+### حل المشكلات السريعة
 
 | المشكلة | الحل |
 | --- | --- |
-| البرنامج يطلب مفتاحًا رغم إدخاله | تأكد أن المفتاح يخص هذا الجهاز بالضبط |
-| البحث لا يعرض نتائج | تأكد من الاتصال بالإنترنت وحدّث الصفحة من داخل البرنامج |
-| الإرسال لا يعمل | تحقق من إيميل الإرسال وكلمة المرور في الإعدادات |
-| فشل التعرف على النصوص العربية من الصور | تأكد أن ملف التثبيت هو أحدث نسخة (تدعم العربية داخل تيليجرام) |
+| يطلب مفتاحاً رغم إدخاله | تأكد أن المفتاح يخص هذا الجهاز بالضبط |
+| البحث لا يعرض نتائج | تحقق من الإنترنت وحدّث الصفحة من داخل البرنامج |
+| الإرسال لا يعمل | تحقق من الإيميل وكلمة مرور التطبيق في الإعدادات |
+| فشل قراءة العربية من الصور | تأكد أنك تستخدم أحدث نسخة تثبيت (تدعم العربية) |
+
+### الترخيص والملكية
+
+**Job Terminator** برنامج مملوك لـ **محمد مبروك** ويُوزَّع بترخيص أوفلاين مرتبط
+بجهاز واحد — راجع ملف **[LICENSE](LICENSE)**. يُمنع إعادة البيع أو النسخ أو فك
+الشفرات أو تجاوز حماية الترخيص.
 
 ---
 
-لمساعدة إضافية أو مفتاح جديد: تواصل مع البائع عبر واتساب.
+## 👤 Support / الدعم
 
----
+For license keys, activation, or support: contact the seller via WhatsApp.
+للحصول على مفاتيح أو دعم: تواصل مع البائع عبر واتساب.
 
-**Website (sales page):** hosted on GitHub Pages (or `www.jobterminator.ai` once the domain is set) — the installer and site are published from this repo's **Releases** and **Pages**.
+**© 2026 Job Terminator — All rights reserved / جميع الحقوق محفوظة.**

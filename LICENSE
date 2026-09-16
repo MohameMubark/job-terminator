@@ -1,0 +1,97 @@
+# Job Terminator — Proprietary License / ترخيص الملكية
+
+**Copyright © 2026 Job Terminator. All rights reserved.**
+
+> This program is the exclusive property of its developer and owner, and is
+> distributed under an **offline machine-locked license**. It is NOT free
+> software and NOT open source.
+>
+> هذا البرنامج ملكية حصرية لمطوّره ومالكه، ويُوزَّع بموجب **ترخيص أوفلاين مرتبط بجهاز واحد**. وهو ليس برنامج حر ولا مفتوح المصدر.
+
+---
+
+## English — Software License Agreement
+
+By downloading, installing, or using **Job Terminator** ("the Software") you
+agree to the following terms:
+
+1. **Ownership.** The Software, including all source code, binaries, brand,
+   design, and documentation, is the sole property of **Job Terminator**
+   (the "Owner"). Ownership is never transferred to the buyer/licensee.
+
+2. **Grant of License.** The Owner grants you a personal, non-transferable,
+   non-exclusive license to run the Software on **one machine only**, bound
+   to that machine's unique Machine Code and the RSA-signed license key
+   issued by the Owner. The license activates offline and does not expire
+   before its stated expiry date.
+
+3. **Machine-lock.** The Software refuses to start without a valid license key
+   matching the machine's Machine Code. The license governs encryption of the
+   settings file and is bound to the hardware fingerprint.
+
+4. **Permitted use.** You may install and run the Software on your own
+   machine, and use it to automate your own job applications.
+
+5. **Prohibited acts.** You may NOT:
+   - copy, sell, resell, rent, lease, sub-license, or redistribute the
+     Software or its installer, in whole or in part;
+   - decompile, reverse engineer, disassemble, obfuscate-bypass, or attempt
+     to derive its source code or bypass its license protection;
+   - remove or alter any license, copyright, or ownership notice;
+   - create derivative versions and present them as your own;
+   - transfer the license to another machine without a new key from the Owner.
+
+6. **No warranty.** The Software is provided "as is" without warranty of any
+   kind. The Owner is not liable for any damages arising from its use.
+
+7. **Termination.** Any violation terminates your license immediately; the
+   Owner may deny activation of new keys without refund.
+
+8. **Governing law.** This agreement is governed by the laws of the Owner's
+   country of residence. For support, license keys, or legal contact:
+   `support@example.com`.
+
+---
+
+## العربية — اتفاقية ترخيص البرنامج
+
+بتحميلك أو تثبيتك أو استخدامك **Job Terminator** ("البرنامج") فأنت توافق على:
+
+1. **الملكية:** البرنامج بكل ما يتضمنه — الكود المصدري، الملفات التنفيذية،
+   العلامة التجارية، التصميم، والوثائق — ملكية حصرية لـ **محمد مبروك**
+   ("المالك"). الملكية لا تُنقل أبداً للمشتري/المرخَّص له.
+
+2. **منح الترخيص:** يمنحك المالك ترخيصاً شخصياً غير قابل للنقل أو إعادة البيع،
+   لتشغيل البرنامج على **جهاز واحد فقط**، مرتبط بكود الآلة الخاص بهذا الجهاز
+   وبمفتاح ترخيص موقّع رقمياً (RSA) يصدره المالك. الترخيص يعمل أوفلاين ولا
+   ينتهي قبل تاريخ انتهائه المحدد.
+
+3. **الارتباط بالجهاز:** يرفض البرنامج التشغيل بدون مفتاح صالح يطابق كود آلة
+   جهازك. ويحكم الترخيص أيضاً تشفير ملف الإعدادات ويرتبط ببصمة الجهاز.
+
+4. **الاستخدام المسموح:** يجوز لك تثبيت البرنامج وتشغيله على جهازك الخاص
+   واستخدامه لأتمتة طلبات التقديم على الوظائف الخاصة بك.
+
+5. **الأفعال المحظورة:** لا يجوز لك إطلاقاً:
+   - نسخ أو بيع أو إعادة بيع أو تأجير أو تأجير فرعي أو إعادة توزيع البرنامج
+     أو ملف التثبيت، كلياً أو جزئياً؛
+   - فك الشفرات أو الهندسة العكسية أو التفكيك أو محاولة استخراج الكود المصدري
+     أو تجاوز حماية الترخيص؛
+   - إزالة أو تعديل أي إشعار ترخيص أو حقوق ملكية؛
+   - إنشاء نسخ مشتقة وتقديمها على أنها ملكك؛
+   - نقل الترخيص لجهاز آخر بدون مفتاح جديد من المالك.
+
+6. **بدون ضمان:** يُقدَّم البرنامج "كما هو" دون أي ضمان من أي نوع، والمالك غير
+   مسؤول عن أي أضرار ناتجة عن استخدامه.
+
+7. **الإنهاء:** أي مخالفة تُنهي ترخيصك فوراً، ويحق للمالك رفض إصدار مفاتيح
+   جديدة دون إرجاع المبلغ المدفوع.
+
+8. **القانون الحاكم:** تخضع هذه الاتفاقية لقوانين بلد إقامة المالك. للدعم أو
+   المفاتيح أو التواصل القانوني: `support@example.com`.
+
+---
+
+- License type: Proprietary / commercial, machine-locked, offline activation
+- Enforcement: RSA signed keys (2048-bit PKCS#1 v1.5 / SHA-256) + AES-256
+  settings encryption derived from machine-id + license key
