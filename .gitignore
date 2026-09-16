@@ -1,0 +1,23 @@
+# Only the public sales site has content in this repo.
+# Everything else (source code, tools, secrets, build) stays local.
+app/
+tools/
+installer/
+build/
+dist/
+docs/
+__pycache__/
+*.pyc
+*.log
+*.exe
+*.db
+*.json
+*.pem
+*.pickle
+*.session
+config.enc
+license.dat
+credentials.json
+token.pickle
+README-dev.md
+README-user.md
