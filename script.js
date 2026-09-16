@@ -167,7 +167,9 @@ function setTheme(th) {
 /* ---------- animated counters in the dashboard mockup ---------- */
 (function counters() {
   const els = document.querySelectorAll("[data-counter]");
-  if (!els.length) return;
+  const aw = document.querySelector(".app-window");
+  if (!els.length && !aw) return;
+  if (aw) setTimeout(() => aw.classList.add("ready"), 350);
   if (document.documentElement.getAttribute("data-theme") === "light") {
     els.forEach(run);
     return;

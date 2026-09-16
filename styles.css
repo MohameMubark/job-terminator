@@ -95,13 +95,19 @@ html[lang="en"] .dl-card h3{direction:ltr;text-align:left}
 .hero-meta li::before{content:"✓";color:var(--acc);font-weight:700;position:absolute;left:0}
 
 /* app window mockup */
-.app-window{background:rgba(12,14,20,.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,.4),0 0 90px rgba(16,185,129,.07);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.hero-visual{position:relative}
+.glow-ring{position:absolute;inset:-60px;background:radial-gradient(ellipse 60% 55% at 50% 45%,rgba(52,211,153,.16),transparent 70%);filter:blur(28px);pointer-events:none}
+.app-window{position:relative;background:rgba(12,14,20,.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,.4),0 0 90px rgba(16,185,129,.07);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease);animation:windowFade .8s var(--ease) both}
+@keyframes windowFade{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
 .app-window:hover{transform:translateY(-4px);box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.4),0 0 100px rgba(16,185,129,.1)}
 .app-titlebar{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.03);padding:11px 16px;border-bottom:1px solid var(--line-soft)}
 .t-dot{width:11px;height:11px;border-radius:50%;background:#2a2f3a;transition:background .15s}
 .t-dot:first-child{background:#e06565}
 .t-dot:nth-child(2){background:#e0b45c}
 .t-dot:nth-child(3){background:#3ecf8e}
+.t-live{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:#3ecf8e;font-family:var(--mono);letter-spacing:1px;border:1px solid rgba(62,207,142,.3);padding:2px 8px;border-radius:999px;background:rgba(62,207,142,.08)}
+.t-live .pulse{width:7px;height:7px;border-radius:50%;background:#3ecf8e;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(62,207,142,.5)}50%{opacity:.5;box-shadow:0 0 0 4px rgba(62,207,142,0)}}
 .t-name{margin-inline-start:auto;font-size:12.5px;color:var(--dim);font-weight:500}
 .app-body{display:flex;min-height:308px}
 .app-side{background:rgba(255,255,255,.015);border-inline-end:1px solid var(--line-soft);padding:14px 10px;display:flex;flex-direction:column;gap:6px;min-width:112px}
@@ -121,6 +127,16 @@ html[lang="en"] .dl-card h3{direction:ltr;text-align:left}
 .chip.ok{background:rgba(52,211,153,.1);color:var(--acc);border-color:rgba(52,211,153,.25)}
 .chip.sent{background:rgba(96,165,250,.1);color:var(--blue);border-color:rgba(96,165,250,.25)}
 .chip.skip{background:rgba(255,255,255,.05);color:var(--dim)}
+.bar{position:relative;flex:none;width:10px;height:4px;background:rgba(255,255,255,.09);border-radius:2px;overflow:hidden}
+.bar i{position:absolute;inset:0;background:linear-gradient(90deg,var(--acc-deep),var(--acc));transform:scaleX(0);transform-origin:left;border-radius:2px;transition:transform .9s var(--ease)}
+.bar.done i{background:linear-gradient(90deg,var(--blue),#93c5fd)}
+.bar.skip i{background:linear-gradient(90deg,#4b5568,#6b7280)}
+.app-window.ready .bar i{transform:scaleX(var(--w,0))}
+.float-card{position:absolute;z-index:5;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;font-family:var(--font-en);color:var(--txt);background:rgba(14,17,24,.92);border:1px solid var(--line);border-radius:12px;padding:9px 14px;box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,.3),0 0 30px rgba(52,211,153,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.float-card svg{color:var(--acc);flex:none}
+.fc-1{top:26px;right:-24px;animation:floatCard 6s ease-in-out infinite}
+.fc-2{bottom:52px;left:-28px;animation:floatCard 7s ease-in-out 1s infinite}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
 /* ---------- strip ---------- */
 .strip{border-block:1px solid var(--line-soft);background:var(--bg2)}
@@ -279,6 +295,9 @@ html[data-theme="light"] .job-row,
 html[data-theme="light"] .strip-list li{background:#f4f7fb}
 html[data-theme="light"] .chip.skip{background:rgba(18,38,60,.07)}
 html[data-theme="light"] .chip.ok{background:rgba(11,158,108,.1);border-color:rgba(11,158,108,.3)}
+html[data-theme="light"] .bar{background:rgba(18,38,60,.1)}
+html[data-theme="light"] .float-card{background:rgba(255,255,255,.94);box-shadow:0 18px 44px rgba(18,38,60,.14),0 0 0 1px rgba(18,38,60,.07)}
+html[data-theme="light"] .glow-ring{background:radial-gradient(ellipse 60% 55% at 50% 45%,rgba(16,185,129,.12),transparent 70%)}
 html[data-theme="light"] .feature:hover,
 html[data-theme="light"] .plan.featured{box-shadow:0 18px 44px rgba(18,38,60,.12)}
 html[data-theme="light"] .license-form input,
