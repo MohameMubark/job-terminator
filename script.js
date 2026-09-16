@@ -1,6 +1,4 @@
-/* Job Terminator site: i18n engine (ar RTL default / en LTR) + interactions.
-   IMPORTANT (seller): set SELLER_EMAIL to your real address before publishing.
-   If left unset, the form falls back to WhatsApp automatically. */
+/* Job Terminator site: i18n engine (ar RTL default / en LTR) + interactions. */
 const SELLER_EMAIL = "";
 const WA_NUMBER = "201207516034";
 const DEFAULT_LANG = "ar";
@@ -49,6 +47,9 @@ function applyLang(lang) {
   if (order) order.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(t("wa.orderMsg"));
   const fl = document.querySelector(".js-wa-float");
   if (fl) fl.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(t("wa.floatMsg"));
+
+  const crumbs = document.querySelectorAll(".footer-desc, .footer-contact");
+  document.documentElement.setAttribute("data-lang-set", lang);
 
   document.querySelectorAll(".lang-switch button").forEach((b) =>
     b.classList.toggle("active", b.getAttribute("data-lang") === lang)
@@ -122,11 +123,25 @@ function setTheme(th) {
   if (!btn || !nav) return;
   btn.addEventListener("click", () => {
     const open = nav.classList.toggle("open");
+    btn.classList.toggle("open", open);
     btn.setAttribute("aria-expanded", open ? "true" : "false");
   });
   nav.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => nav.classList.remove("open"))
+    a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      btn.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    })
   );
+  const onKey = (e) => {
+    if (e.key === "Escape" && nav.classList.contains("open")) {
+      nav.classList.remove("open");
+      btn.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      btn.focus();
+    }
+  };
+  document.addEventListener("keydown", onKey);
 })();
 
 /* ---------- reveal on scroll ---------- */
@@ -147,6 +162,52 @@ function setTheme(th) {
     { threshold: 0.12 }
   );
   els.forEach((el) => io.observe(el));
+})();
+
+/* ---------- animated counters in the dashboard mockup ---------- */
+(function counters() {
+  const els = document.querySelectorAll("[data-counter]");
+  if (!els.length) return;
+  if (document.documentElement.getAttribute("data-theme") === "light") {
+    els.forEach(run);
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          run(e.target);
+          io.unobserve(e.target);
+        }
+      }),
+    { threshold: 0.4 }
+  );
+  els.forEach((el) => io.observe(el));
+  let started = false;
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!started) { els.forEach(run); started = true; }
+  });
+  function run(el) {
+    if (el.dataset.done) return;
+    el.dataset.done = "1";
+    const target = parseInt(el.getAttribute("data-counter"), 10);
+    if (isNaN(target)) { el.textContent = "0"; return; }
+    const reduced = window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || ep()) { el.textContent = target; return; }
+    const dur = 900;
+    const t0 = performance.now();
+    (function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+    function ep() {
+      const wrap = el.closest(".stat");
+      return !wrap || wrap.offsetHeight === 0 && !("IntersectionObserver" in window);
+    }
+  }
 })();
 
 /* ---------- footer year ---------- */
