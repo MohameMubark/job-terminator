@@ -56,7 +56,7 @@ One EXE — no Python, no libraries, no OCR installs:
 
 ### License / ownership
 
-**Job Terminator** is proprietary software owned by Job Terminator. It is
+**Job Terminator** is proprietary software owned by the developer. It is
 distributed under a machine-locked offline license — see the **[LICENSE](LICENSE)**
 file. Redistribution, resale, decompiling, or bypassing the license protection is
 prohibited.
@@ -113,7 +113,7 @@ prohibited.
 
 ### الترخيص والملكية
 
-**Job Terminator** برنامج مملوك لـ **محمد مبروك** ويُوزَّع بترخيص أوفلاين مرتبط
+**Job Terminator** برنامج مملوك لـ **المطوّر** ويُوزَّع بترخيص أوفلاين مرتبط
 بجهاز واحد — راجع ملف **[LICENSE](LICENSE)**. يُمنع إعادة البيع أو النسخ أو فك
 الشفرات أو تجاوز حماية الترخيص.
 
