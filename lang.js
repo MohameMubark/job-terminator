@@ -133,6 +133,7 @@ ar: {
 "form.fMid": "Machine code", "form.fNotes": "Notes",
 "theme.toLight": "التبديل إلى الوضع الفاتح",
 "theme.toDark": "التبديل إلى الوضع الداكن",
+"lang.trigger": "تغيير اللغة",
 "a11y.skip": "تخطَّ إلى المحتوى"
 },
 en: {
@@ -267,6 +268,7 @@ en: {
 "form.fMid": "Machine code", "form.fNotes": "Notes",
 "theme.toLight": "Switch to light mode",
 "theme.toDark": "Switch to dark mode",
+"lang.trigger": "Change language",
 "a11y.skip": "Skip to content"
 }
 };

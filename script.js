@@ -51,20 +51,73 @@ function applyLang(lang) {
   const crumbs = document.querySelectorAll(".footer-desc, .footer-contact");
   document.documentElement.setAttribute("data-lang-set", lang);
 
-  document.querySelectorAll(".lang-switch button").forEach((b) =>
+  document.querySelectorAll(".lang-menu button").forEach((b) =>
     b.classList.toggle("active", b.getAttribute("data-lang") === lang)
   );
+  const cur = document.querySelector(".lang-current");
+  if (cur) cur.textContent = lang === "en" ? "English" : "العربية";
   try { localStorage.setItem("JobTerminator-lang", lang); } catch (e) {}
   if (typeof syncThemeAria === "function") syncThemeAria();
+}
+
+/* ---------- language dropdown (professional switcher) ---------- */
+function initLangDropdown() {
+  const sw = document.querySelector(".lang-switch");
+  if (!sw) return;
+  const trigger = sw.querySelector(".lang-trigger");
+  const menu = sw.querySelector(".lang-menu");
+  if (!trigger || !menu) return;
+
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = sw.classList.toggle("open");
+    trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) {
+      const active = sw.querySelector(".lang-menu button.active");
+      (active || sw.querySelector(".lang-menu button")).focus();
+    }
+  });
+
+  sw.querySelectorAll(".lang-menu button").forEach((b) =>
+    b.addEventListener("click", () => {
+      applyLang(b.getAttribute("data-lang"));
+      sw.classList.remove("open");
+      trigger.setAttribute("aria-expanded", "false");
+    })
+  );
+
+  document.addEventListener("click", (e) => {
+    if (sw.classList.contains("open") && !sw.contains(e.target)) {
+      sw.classList.remove("open");
+      trigger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && sw.classList.contains("open")) {
+      sw.classList.remove("open");
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.focus();
+    }
+  });
+
+  menu.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    e.preventDefault();
+    const items = Array.prototype.slice.call(menu.querySelectorAll("button"));
+    const i = items.indexOf(document.activeElement);
+    const n = e.key === "ArrowDown"
+      ? (i + 1) % items.length
+      : (i - 1 + items.length) % items.length;
+    items[n].focus();
+  });
 }
 
 function initLang() {
   let saved = DEFAULT_LANG;
   try { saved = localStorage.getItem("JobTerminator-lang") || DEFAULT_LANG; } catch (e) {}
   applyLang(saved);
-  document.querySelectorAll(".lang-switch button").forEach((b) =>
-    b.addEventListener("click", () => applyLang(b.getAttribute("data-lang")))
-  );
+  initLangDropdown();
 }
 
 /* ---------- theme (dark default / light) ---------- */

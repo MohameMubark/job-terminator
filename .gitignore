@@ -6,6 +6,8 @@ installer/
 build/
 dist/
 docs/
+assets/
+website/
 __pycache__/
 *.pyc
 *.log
