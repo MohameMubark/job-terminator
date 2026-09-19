@@ -1,0 +1,5 @@
+# Job Terminator — https://mohamemubark.github.io/job-terminator/
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamemubark.github.io/job-terminator/sitemap.xml
