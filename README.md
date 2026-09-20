@@ -1,5 +1,7 @@
 # 📥 Job Terminator — Automated Job Application Assistant
 
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-mohamemubark.github.io/job--terminator-0A6B4C?style=for-the-badge)](https://mohamemubark.github.io/job-terminator/)
+
 **English:** Automates your job-hunting: it searches the main job boards **on your behalf**, matches openings with your profile, generates a tailored resume for each job, and sends the application from **your** Gmail.
 
 **العربية:** يؤتمت البحث عن الوظائف: **البحث بدلاً منك** في مواقع التوظيف الرئيسية، يطابق الفرص مع بياناتك، يولّد سيرة ذاتية مخصصة لكل وظيفة، ويُرسل طلب التقديم من **إيميلك** الشخصي.
